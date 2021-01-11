@@ -64,15 +64,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Shape data\AngleRange.cs" />
-    <Compile Include="Assets\Scripts\Shape data\TorDimension.cs" />
-    <Compile Include="Assets\Scripts\Shape maker\MeshCreator.cs" />
-    <Compile Include="Assets\Scripts\Shape maker\TorBuilder.cs" />
-    <Compile Include="Assets\Scripts\Shape maker\TriangleCreator.cs" />
-    <Compile Include="Assets\Scripts\Shape maker\VerticesCreator.cs" />
-    <Compile Include="Assets\Scripts\Shape using\MeshSetter.cs" />
-    <Compile Include="Assets\Scripts\Shape using\TorScaler.cs" />
-    <Compile Include="Assets\Scripts\Spawner\Spawn.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Spawner\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Tor\Shape data\AngleRange.cs" />
+    <Compile Include="Assets\Scripts\Tor\Shape data\TorDimension.cs" />
+    <Compile Include="Assets\Scripts\Tor\Shape maker\MeshCreator.cs" />
+    <Compile Include="Assets\Scripts\Tor\Shape maker\TorBuilder.cs" />
+    <Compile Include="Assets\Scripts\Tor\Shape maker\TriangleCreator.cs" />
+    <Compile Include="Assets\Scripts\Tor\Shape maker\VerticesCreator.cs" />
+    <Compile Include="Assets\Scripts\Tor\Shape using\MeshSetter.cs" />
+    <Compile Include="Assets\Scripts\Tor\Shape using\TorScaler.cs" />
+    <Compile Include="Assets\Scripts\UI\Button.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
