@@ -10,6 +10,6 @@ public class Button : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Click?.Invoke();
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
 }

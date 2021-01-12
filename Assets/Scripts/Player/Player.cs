@@ -1,12 +1,17 @@
 ﻿
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private Spawner spawner;
+    [SerializeField] private Spawner spawner;
+    [SerializeField] private ScoreContainer scoreBox;
+    [SerializeField] private GameObject button;
+    [SerializeField] private Canvas canvas;
     private bool hasCanClick = false;
     private Camera currentCamera;
+
+    public event UnityAction GiveScore;
 
     private void Start()
     {
@@ -68,6 +73,16 @@ public class Player : MonoBehaviour
         {
             var material = renderer.material;
             material.color = color;
+        }
+
+        if (color == Color.green)
+            GiveScore?.Invoke();
+        else
+        {
+            Destroy(spawner.Tor.gameObject);
+            spawner.StopSpawn();
+            scoreBox.ResetScore();
+            button.SetActive(true);
         }
     }
 }

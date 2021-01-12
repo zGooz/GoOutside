@@ -40,6 +40,11 @@ public class Spawner : MonoBehaviour
         StartCoroutine(Respawn());
     }
 
+    public void StopSpawn()
+    {
+        StopAllCoroutines();
+    }
+
     private IEnumerator Respawn()
     {
         yield return new WaitForSeconds(time);
