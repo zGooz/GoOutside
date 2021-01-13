@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\Tor\Shape using\MeshSetter.cs" />
     <Compile Include="Assets\Scripts\Tor\Shape using\TorScaler.cs" />
     <Compile Include="Assets\Scripts\UI\Button.cs" />
+    <Compile Include="Assets\Scripts\UI\UpdateScoreInfo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

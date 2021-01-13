@@ -18,6 +18,16 @@ public class Player : MonoBehaviour
         currentCamera = Camera.main;
     }
 
+    private void OnEnable()
+    {
+        spawner.NewTor += SetCanClick;
+    }
+
+    private void OnDisable()
+    {
+        spawner.NewTor -= SetCanClick;
+    }
+
     private void Update()
     {
         if (hasCanClick)
@@ -26,7 +36,7 @@ public class Player : MonoBehaviour
             {
                 if (spawner.Tor != null)
                 {
-                    if (OnSectorClick())
+                    if (OnClickToSector())
                     {
                         ChangeTorColor(Color.green);
                         hasCanClick = false;
@@ -38,22 +48,17 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        spawner.NewTor += SetCanClick;
-    }
-
-    private void OnDisable()
-    {
-        spawner.NewTor -= SetCanClick;
-    }
-
     private void SetCanClick()
     {
         hasCanClick = true;
     }
 
-    private bool OnSectorClick()
+    public bool GetCanClick()
+    {
+        return hasCanClick;
+    }
+
+    private bool OnClickToSector()
     {
         var range = spawner.Tor.GetComponent<AngleRange>();
         var mouseScreen = Input.mousePosition;
@@ -78,11 +83,13 @@ public class Player : MonoBehaviour
         if (color == Color.green)
             GiveScore?.Invoke();
         else
-        {
-            Destroy(spawner.Tor.gameObject);
-            spawner.StopSpawn();
-            scoreBox.ResetScore();
-            button.SetActive(true);
-        }
+            ReloadGame();
+    }
+
+    public void ReloadGame()
+    {
+        spawner.StopSpawn();
+        scoreBox.ResetScore();
+        button.SetActive(true);
     }
 }

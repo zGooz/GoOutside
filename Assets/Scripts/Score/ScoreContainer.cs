@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ScoreContainer : MonoBehaviour
 {
-    [SerializeField]
-    private Player player;
+    [SerializeField] private Player player;
+    [SerializeField] private UpdateScoreInfo scoreViewer;
     private Button button;
     private int score = 0;
     private int highScore = 0;
@@ -17,14 +17,14 @@ public class ScoreContainer : MonoBehaviour
 
     private void OnEnable()
     {
+        button.Click += ResetScore;
         player.GiveScore += AddScore;
-        button.Click += ResetAll;
     }
 
     private void OnDisable()
     {
+        button.Click -= ResetScore;
         player.GiveScore -= AddScore;
-        button.Click -= ResetAll;
     }
 
     private void AddScore()
@@ -35,17 +35,14 @@ public class ScoreContainer : MonoBehaviour
         {
             highScore = score;
         }
+
+        scoreViewer.UpdateScore();
     }
 
     public void ResetScore()
     {
         score = 0;
-    }
-
-    private void ResetAll()
-    {
-        score = 0;
-        highScore = 0;
+        scoreViewer.UpdateScore();
     }
 
     public int GetScore()
