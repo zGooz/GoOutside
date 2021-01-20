@@ -498,8 +498,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -578,7 +578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c0916b61e00554fa71e55814713cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1897866791}
   scoreBox: {fileID: 321353283}
 --- !u!1 &1072974069
 GameObject:
@@ -747,7 +746,7 @@ PrefabInstance:
     - target: {fileID: 6003869030385896501, guid: 5ef2dd7e5f8e6f244a6054bb16e0f980,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6003869030385896501, guid: 5ef2dd7e5f8e6f244a6054bb16e0f980,
         type: 3}

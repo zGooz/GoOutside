@@ -6,7 +6,6 @@ public class TorScaler : MonoBehaviour
     [SerializeField]
     private Spawner spawner;
     private Player player;
-    private Transform form;
     private float evalute = 1f;
     private readonly float step = 0.003f;
 
@@ -14,7 +13,6 @@ public class TorScaler : MonoBehaviour
     {
         var manager = GameObject.FindGameObjectWithTag("Player");
         player = manager.GetComponent<Player>();
-        form = GetComponent<Transform>();
     }
 
     private void OnDestroy()
@@ -23,14 +21,14 @@ public class TorScaler : MonoBehaviour
 
         if (player.GetCanClick())
         {
-            player.ReloadGame();
+            player.ReloadGame(false);
         }
     }
 
     private void Update()
     {
         evalute -= step;
-        form.localScale = new Vector3(evalute, evalute, 0);
+        transform.localScale = new Vector3(evalute, evalute, 0);
     }
 
     public float GetStep()

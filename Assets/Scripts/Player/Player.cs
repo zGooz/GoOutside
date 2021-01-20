@@ -83,13 +83,18 @@ public class Player : MonoBehaviour
         if (color == Color.green)
             GiveScore?.Invoke();
         else
-            ReloadGame();
+            ReloadGame(false);
     }
 
-    public void ReloadGame()
+    public void ReloadGame(bool isReset = true)
     {
         spawner.StopSpawn();
-        scoreBox.ResetScore();
+
+        if (isReset)
+        {
+            scoreBox.ResetScore();
+        }
+
         button.SetActive(true);
     }
 }
