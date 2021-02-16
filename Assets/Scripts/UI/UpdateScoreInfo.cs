@@ -15,7 +15,7 @@ public class UpdateScoreInfo : MonoBehaviour
 
     public void UpdateScore()
     {
-        textField.text = "Score : " + scoreBox.GetScore() + 
-                         "\nHigh score : " + scoreBox.GetHighScore();
+        textField.text = "Score : " + scoreBox.Score + 
+                         "\nHigh score : " + scoreBox.HighScore;
     }
 }

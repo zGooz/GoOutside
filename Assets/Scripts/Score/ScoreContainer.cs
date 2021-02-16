@@ -5,9 +5,13 @@ public class ScoreContainer : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private UpdateScoreInfo scoreViewer;
+    
     private Button button;
     private int score = 0;
     private int highScore = 0;
+
+    public int Score => score;
+    public int HighScore => highScore;
 
     private void Awake()
     {
@@ -43,15 +47,5 @@ public class ScoreContainer : MonoBehaviour
     {
         score = 0;
         scoreViewer.UpdateScore();
-    }
-
-    public int GetScore()
-    {
-        return score;
-    }
-
-    public int GetHighScore()
-    {
-        return highScore;
     }
 }

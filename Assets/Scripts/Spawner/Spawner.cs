@@ -19,8 +19,8 @@ public class Spawner : MonoBehaviour
         button = widget.GetComponent<Button>();
 
         var scaler = tor.GetComponent<TorScaler>();
-        var evalute = scaler.GetMaxEvalute();
-        var step = scaler.GetStep();
+        var evalute = scaler.MaxEvalute;
+        var step = scaler.Step;
 
         time = (step / evalute) * 600f;
     }

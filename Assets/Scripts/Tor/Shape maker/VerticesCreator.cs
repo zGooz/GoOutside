@@ -32,12 +32,12 @@ public class VerticesCreator : MonoBehaviour
 
     private void AddVertex(int i, ref int j, Vector3 centr, Vector3[] vertices)
     {
-        GetVectors(centr, i, out Vector3 outside, out Vector3 inside);
-        vertices[j++] = outside;
-        vertices[j++] = inside;
+        GetVertexes(centr, i, out Vector3 outsideVertex, out Vector3 insideVertex);
+        vertices[j++] = outsideVertex;
+        vertices[j++] = insideVertex;
     }
 
-    private void GetVectors(Vector3 centr, int i, out Vector3 outside, out Vector3 inside)
+    private void GetVertexes(Vector3 centr, int i, out Vector3 outsideVertex, out Vector3 insideVertex)
     {
         var angle = i * Mathf.Deg2Rad;
         var radius = dimension.Radius;
@@ -51,7 +51,7 @@ public class VerticesCreator : MonoBehaviour
         var xInside = centr.x + cos * ridiusSmall;
         var yInside = centr.y + sin * ridiusSmall;
 
-        outside = new Vector3(xOutside, yOutside, 0);
-        inside = new Vector3(xInside, yInside, 0);
+        outsideVertex = new Vector3(xOutside, yOutside, 0);
+        insideVertex = new Vector3(xInside, yInside, 0);
     }
 }

@@ -8,11 +8,17 @@ public class TorScaler : MonoBehaviour
     private Player player;
     private float evalute = 1f;
     private readonly float step = 0.003f;
+    private readonly float minEvalute = 0.06f;
+    private Transform form;
+
+    public float MaxEvalute => 1f;
+    public float Step => step;
 
     private void Awake()
     {
         var manager = GameObject.FindGameObjectWithTag("Player");
         player = manager.GetComponent<Player>();
+        form = GetComponent<Transform>();
     }
 
     private void OnDestroy()
@@ -28,16 +34,12 @@ public class TorScaler : MonoBehaviour
     private void Update()
     {
         evalute -= step;
-        transform.localScale = new Vector3(evalute, evalute, 0);
-    }
 
-    public float GetStep()
-    {
-        return step;
-    }
+        if (evalute <= minEvalute) 
+        {
+            Destroy(gameObject);
+        }
 
-    public float GetMaxEvalute()
-    {
-        return 1f;
+        form.localScale = new Vector3(evalute, evalute, 0);
     }
 }

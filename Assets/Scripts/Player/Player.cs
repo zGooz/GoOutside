@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private ScoreContainer scoreBox;
     [SerializeField] private GameObject button;
     [SerializeField] private Canvas canvas;
+
     private bool hasCanClick = false;
     private Camera currentCamera;
 
@@ -63,7 +64,9 @@ public class Player : MonoBehaviour
         var range = spawner.Tor.GetComponent<AngleRange>();
         var mouseScreen = Input.mousePosition;
         var mouseWorld = currentCamera.ScreenToWorldPoint(mouseScreen);
+
         mouseWorld.Set(mouseWorld.x, mouseWorld.y, 0);
+
         var angle = Vector3.SignedAngle(mouseWorld, Vector3.right, Vector3.back);
         if (angle < 0) angle = Mathf.Abs(angle + 180) + 180;
 
